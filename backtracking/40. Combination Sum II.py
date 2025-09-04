@@ -22,4 +22,4 @@ class Solution:
         return res
 
 sol = Solution()
-print(sol.combinationSum2([1,1,7], 8)) # [1,1,2,5,6,7,10]
+print(sol.combinationSum2([1,1,2,5,6,7,10], 8)) # [1,1,2,5,6,7,10]
