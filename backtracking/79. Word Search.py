@@ -10,19 +10,16 @@ class Solution:
         def _exist(r, c, i):
             if i == len(word):
                 return True
-            if r < 0 or c < 0 or r >= rows or c >= cols or board[r][c] != word[i]:
+            if r < 0 or c < 0 or r >= rows or c >= cols or visited[r][c] or board[r][c] != word[i]:
                 return
 
             visited[r][c] = True
 
             found = (
-                _exist(row - 1, col, i + 1)
-                or _exist(row + 1, col, i + 1)
-                or _exist(row, col - 1, i + 1)
-                or _exist(row, col + 1, i + 1)
+                _exist(r - 1, c, i + 1) or _exist(r + 1, c, i + 1) or _exist(r, c - 1, i + 1) or _exist(r, c + 1, i + 1)
             )
 
-            visited[row][col] = False
+            visited[r][c] = False
             return found
 
         for row in range(rows):
